@@ -1,0 +1,5 @@
+[Nuage]
+name=nuage
+baseurl=http://ec2-18-188-249-48.us-east-2.compute.amazonaws.com/5.3.2/queens/
+enabled=1
+gpgcheck=0
