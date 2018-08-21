@@ -18,4 +18,6 @@ RUN yum install --disablerepo "*" --enablerepo Nuage 6wind-openstack-extensions 
 
 RUN rm -f /etc/yum.repos.d/nuage.repo
 
+COPY licenses /licenses
+
 USER nova

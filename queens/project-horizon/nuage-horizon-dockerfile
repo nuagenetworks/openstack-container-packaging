@@ -14,3 +14,5 @@ COPY nuage.repo /etc/yum.repos.d/nuage.repo
 RUN yum -y install --disablerepo "*" --enablerepo Nuage nuage-openstack-horizon nuage-openstack-neutronclient && yum clean all
 
 RUN rm -f /etc/yum.repos.d/nuage.repo
+
+COPY licenses /licenses
