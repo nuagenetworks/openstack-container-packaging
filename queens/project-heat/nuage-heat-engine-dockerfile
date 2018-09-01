@@ -5,7 +5,7 @@ LABEL name="nuagenetworks-rhosp13/openstack-heat-engine-5-3-2"
 LABEL maintainer="opensource@nuagenetworks.net"
 LABEL vendor="Nuage"
 LABEL version="5.3.2"
-LABEL release=""
+LABEL release="1"
 LABEL summary="Red Hat OpenStack Platform 13.0 heat-engine Nuage Heat Plugin"
 LABEL description="Red Hat OpenStack Platform 13.0 heat-engine Nuage Heat Plugin"
 
