@@ -1,10 +1,10 @@
 FROM registry.access.redhat.com/rhosp13/openstack-nova-compute:latest
 MAINTAINER Nuage OpenStack Engineering opensource@nuagenetworks.net
 
-LABEL name="nuagenetworks-rhosp13/openstack-nova-compute-5-3-2"
+LABEL name="nuagenetworks-rhosp13/openstack-nova-compute-5-3-2-U2"
 LABEL maintainer="opensource@nuagenetworks.net"
 LABEL vendor="Nuage"
-LABEL version="5.3.2"
+LABEL version="5.3.2.U2"
 LABEL release="1"
 LABEL summary="Red Hat OpenStack Platform 13.0 nova-compute Nuage Nova Plugin"
 LABEL description="Red Hat OpenStack Platform 13.0 nova-compute Nuage Nova Plugin"
@@ -12,7 +12,7 @@ LABEL description="Red Hat OpenStack Platform 13.0 nova-compute Nuage Nova Plugi
 USER root
 
 COPY nuage.repo /etc/yum.repos.d/nuage.repo
-RUN yum install --disablerepo "*" --enablerepo Nuage 6wind-openstack-extensions  -y && yum clean all
+RUN yum install --disablerepo "*" --enablerepo Nuage --nogpgcheck 6wind-openstack-extensions  -y && yum clean all
 
 RUN rm -f /etc/yum.repos.d/nuage.repo
 
