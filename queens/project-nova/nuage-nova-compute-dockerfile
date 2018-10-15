@@ -11,8 +11,9 @@ LABEL description="Red Hat OpenStack Platform 13.0 nova-compute Nuage Nova Plugi
 
 USER root
 
+COPY RPM-GPG-KEY-Nuage /tmp/RPM-GPG-KEY-Nuage
 COPY nuage.repo /etc/yum.repos.d/nuage.repo
-RUN yum install --disablerepo "*" --enablerepo Nuage --nogpgcheck 6wind-openstack-extensions  -y && yum clean all
+RUN yum install --disablerepo "*" --enablerepo Nuage 6wind-openstack-extensions  -y && yum clean all
 
 RUN rm -f /etc/yum.repos.d/nuage.repo
 
