@@ -24,13 +24,13 @@
     NuageMajorRelease: 5 or 6
     NuageMinorRelease: 3 or 4
     NuageUpdateRelease: 2U2 or 3 or 1
-    NuageRelease: Starts from 1 and increase 1 everytime when new version available in same release
+    NuageRelease: Starts from 1, if there is a new release in same version, from previously generated dockerfiles get the release number and add 1 to it
     RepoBaseUrl: https://s3-us-west-1.amazonaws.com/nuage-public-mirror/574d63bb0727c27e014d8f27ccc275c3f9641b955e8aa7659d74e4df9cf7847a/5.3.2.U2/queens/ or https://s3-us-west-1.amazonaws.com/nuage-public-mirror/574d63bb0727c27e014d8f27ccc275c3f9641b955e8aa7659d74e4df9cf7847a/5.3.3/queens/
 
 5) Run the script generate.py 
   python generate.py
 
-6) Once the above scipt completes successfully, then push all files to the new branch
+6) Once the above script completes successfully, then push all files to the new branch
   git add --all
   git commit -m <commit-message>
   git push origin <new-branch-name>
