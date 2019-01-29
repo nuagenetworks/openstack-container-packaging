@@ -1,7 +1,7 @@
-OSRelease: 13
-OSName: queens
+OSRelease: 14
+OSName: rocky
 NuageMajorRelease: 5
-NuageMinorRelease: 3
-NuageUpdateRelease: 3
+NuageMinorRelease: 4
+NuageUpdateRelease: 1
 NuageRelease: 1
 RepoBaseUrl: https://s3-us-west-1.amazonaws.com/nuage-public-mirror/574d63bb0727c27e014d8f27ccc275c3f9641b955e8aa7659d74e4df9cf7847a/5.3.3/queens/
