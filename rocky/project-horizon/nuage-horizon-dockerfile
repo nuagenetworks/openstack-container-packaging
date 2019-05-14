@@ -1,7 +1,7 @@
 FROM registry.access.redhat.com/rhosp14/openstack-horizon:latest
 MAINTAINER Nuage OpenStack Engineering opensource@nuagenetworks.net
 
-LABEL name="nuagenetworks-rhosp14/openstack-horizon-5-4-1U1"
+LABEL name="nuagenetworks/rhosp14-openstack-horizon-5-4-1U1"
 LABEL maintainer="opensource@nuagenetworks.net"
 LABEL vendor="Nuage"
 LABEL version="5.4.1U1"
