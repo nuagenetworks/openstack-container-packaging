@@ -19,4 +19,8 @@ RUN rm -f /etc/yum.repos.d/nuage.repo
 
 COPY licenses /licenses
 
+RUN mkdir -p /opt/nuage_upgrade/
+COPY nuage-openstack-upgrade-*.tar.gz /opt/nuage_upgrade/
+RUN tar -xf /opt/nuage_upgrade/nuage-openstack-upgrade-*.tar.gz -C /opt/nuage_upgrade/
+
 USER neutron
