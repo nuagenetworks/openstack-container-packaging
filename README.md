@@ -30,7 +30,9 @@
 5) Run the script generate.py 
   python generate.py
 
-6) Once the above script completes successfully, then push all files to the new branch
+6) Place nuage-openstack-upgrade tarball in `OSName` folder.
+
+7) Once the above script completes successfully, then push all files to the new branch
   git add --all
   git commit -m <commit-message>
   git push origin <new-branch-name>
