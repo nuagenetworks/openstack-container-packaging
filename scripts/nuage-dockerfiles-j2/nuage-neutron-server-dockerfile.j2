@@ -23,5 +23,6 @@ RUN mkdir -p /opt/nuage_upgrade
 WORKDIR /opt/nuage_upgrade
 ADD {{ nuage_config['RepoBaseUrl'] }}/{{ nuage_config['NuageUpgradeScripts'] }} .
 RUN tar -xzf {{ nuage_config['NuageUpgradeScripts'] }}
+WORKDIR /
 
 USER neutron
