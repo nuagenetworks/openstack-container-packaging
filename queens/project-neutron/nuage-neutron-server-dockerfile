@@ -1,4 +1,4 @@
-FROM registry.access.redhat.com/rhosp13/openstack-neutron-server:13.0-84
+FROM registry.access.redhat.com/rhosp13/openstack-neutron-server:latest
 MAINTAINER Nuage OpenStack Engineering opensource@nuagenetworks.net
 
 LABEL name="nuagenetworks/rhosp13-openstack-neutron-server-6-0-3"
@@ -21,8 +21,8 @@ COPY licenses /licenses
 
 RUN mkdir -p /opt/nuage_upgrade
 WORKDIR /opt/nuage_upgrade
-ADD https://s3-us-west-1.amazonaws.com/nuage-public-mirror/574d63bb0727c27e014d8f27ccc275c3f9641b955e8aa7659d74e4df9cf7847a/6.0.3/queens/nuage-openstack-upgrade-0.0.0-3122.tar.gz .
-RUN tar -xzf nuage-openstack-upgrade-0.0.0-3122.tar.gz
+ADD https://s3-us-west-1.amazonaws.com/nuage-public-mirror/574d63bb0727c27e014d8f27ccc275c3f9641b955e8aa7659d74e4df9cf7847a/6.0.3/queens/nuage-openstack-upgrade-6.0.3-28.tar.gz .
+RUN tar -xzf nuage-openstack-upgrade-6.0.3-28.tar.gz
 WORKDIR /
 
 USER neutron

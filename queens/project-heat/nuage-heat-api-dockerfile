@@ -1,4 +1,4 @@
-FROM registry.access.redhat.com/rhosp13/openstack-heat-api:13.0-75
+FROM registry.access.redhat.com/rhosp13/openstack-heat-api:latest
 MAINTAINER Nuage OpenStack Engineering opensource@nuagenetworks.net
 
 LABEL name="nuagenetworks/rhosp13-openstack-heat-api-6-0-3"
