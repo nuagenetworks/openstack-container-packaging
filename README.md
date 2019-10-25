@@ -1,7 +1,8 @@
 # openstack-container-packaging
 
 1) Create a new branch based of master
-  Ex: git checkout -b 5.4.1
+    
+        Ex: git checkout -b 5.4.1
 
 
 2) Make sure license file under scripts/licenses is upto date, if not update it.
@@ -9,7 +10,9 @@
 3) Make sure the RPM-GPG-KEY-Nuage has correct key, if not update it.
 
 4) Configure params in nuage_docker_config.yaml
-  Description for values:
+
+Description for values:
+    
     OSRelease: <OpenStack release number>
     OSName: <OpenStack release name>
     NuageMajorRelease: <Nuage major release number>
@@ -20,6 +23,7 @@
     NuageUpgradeScripts: <Nuage upgrade scripts tarball name>
 
   Example:
+    
     OSRelease: 13 or 14
     OSName: queens or rocky
     NuageMajorRelease: 5 or 6
@@ -30,10 +34,12 @@
     NuageUpgradeScripts: nuage-openstack-upgrade-5.3.3-222.tar.gz
 
 5) Run the script generate.py 
-  python generate.py
 
-6) Once the above script completes successfully, then push all files to the new branch
-  git add --all
-  git commit -m <commit-message>
-  git push origin <new-branch-name>
+          python generate.py
+
+6) Once the above script completes successfully, then push all files to the new branch.
+
+        git add --all
+        git commit -m <commit-message>
+        git push origin <new-branch-name>
  
