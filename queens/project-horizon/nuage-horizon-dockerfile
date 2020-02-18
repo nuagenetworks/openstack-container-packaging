@@ -1,0 +1,18 @@
+FROM registry.access.redhat.com/rhosp13/openstack-horizon:latest
+MAINTAINER Nuage OpenStack Engineering opensource@nuagenetworks.net
+
+LABEL name="nuagenetworks/rhosp13-openstack-horizon-6-0-5"
+LABEL maintainer="opensource@nuagenetworks.net"
+LABEL vendor="Nuage"
+LABEL version="6.0.5"
+LABEL release="1"
+LABEL summary="Red Hat OpenStack Platform 13.0 horizon Nuage Horizon Plugin"
+LABEL description="Red Hat OpenStack Platform 13.0 horizon Nuage Horizon Plugin"
+
+COPY RPM-GPG-KEY-Nuage /tmp/RPM-GPG-KEY-Nuage
+COPY nuage.repo /etc/yum.repos.d/nuage.repo
+RUN yum -y install --disablerepo "*" --enablerepo Nuage nuage-openstack-horizon nuage-openstack-neutronclient && yum clean all
+
+RUN rm -f /etc/yum.repos.d/nuage.repo
+
+COPY licenses /licenses
