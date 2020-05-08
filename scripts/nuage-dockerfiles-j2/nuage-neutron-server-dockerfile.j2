@@ -1,4 +1,4 @@
-FROM registry.access.redhat.com/rhosp{{ nuage_config['OSRelease'] }}/openstack-neutron-server:latest
+FROM registry.access.redhat.com/rhosp{{ nuage_config['OSRelease'] }}/openstack-neutron-server:13.0-114 # latest
 MAINTAINER Nuage OpenStack Engineering opensource@nuagenetworks.net
 
 LABEL name="nuagenetworks/rhosp{{ nuage_config['OSRelease'] }}-openstack-neutron-server-{{ nuage_config['NuageMajorRelease'] }}-{{ nuage_config['NuageMinorRelease'] }}-{{ nuage_config['NuageUpdateRelease'] }}"
