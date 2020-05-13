@@ -1,4 +1,4 @@
-FROM registry.access.redhat.com/rhosp{{ nuage_config['OSRelease'] }}/openstack-nova-compute:13.0-129.1584463509
+FROM registry.access.redhat.com/rhosp{{ nuage_config['OSRelease'] }}/openstack-nova-compute:latest
 MAINTAINER Nuage OpenStack Engineering opensource@nuagenetworks.net
 
 LABEL name="nuagenetworks/rhosp{{ nuage_config['OSRelease'] }}-openstack-nova-compute-{{ nuage_config['NuageMajorRelease'] }}-{{ nuage_config['NuageMinorRelease'] }}-{{ nuage_config['NuageUpdateRelease'] }}"
