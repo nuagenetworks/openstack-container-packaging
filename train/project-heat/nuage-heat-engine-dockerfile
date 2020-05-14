@@ -1,4 +1,4 @@
-FROM registry.access.redhat.com/rhosp16/openstack-heat-engine:latest
+FROM registry.access.redhat.com/rhosp-rhel8/openstack-heat-engine:16.0
 MAINTAINER Nuage OpenStack Engineering opensource@nuagenetworks.net
 
 LABEL name="nuagenetworks/rhosp16-openstack-heat-engine-20-5-latest"
