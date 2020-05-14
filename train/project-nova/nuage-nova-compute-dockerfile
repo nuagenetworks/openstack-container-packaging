@@ -1,4 +1,4 @@
-FROM registry.access.redhat.com/rhosp-rhel8/openstack-nova-compute:16.0
+FROM registry.redhat.io/rhosp-rhel8/openstack-nova-compute:16.0
 MAINTAINER Nuage OpenStack Engineering opensource@nuagenetworks.net
 
 LABEL name="nuagenetworks/rhosp16-openstack-nova-compute-20-5-latest"
