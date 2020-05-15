@@ -1,0 +1,22 @@
+FROM registry.access.redhat.com/rhosp13/openstack-heat-engine:13.0-104
+MAINTAINER Nuage OpenStack Engineering opensource@nuagenetworks.net
+
+LABEL name="nuagenetworks/rhosp13-openstack-heat-engine-6-0-6"
+LABEL maintainer="opensource@nuagenetworks.net"
+LABEL vendor="Nuage"
+LABEL version="6.0.6"
+LABEL release="1"
+LABEL summary="Red Hat OpenStack Platform 13.0 heat-engine Nuage Heat Plugin"
+LABEL description="Red Hat OpenStack Platform 13.0 heat-engine Nuage Heat Plugin"
+
+USER root
+
+COPY RPM-GPG-KEY-Nuage /tmp/RPM-GPG-KEY-Nuage
+COPY nuage.repo /etc/yum.repos.d/nuage.repo
+RUN yum -y install --disablerepo "*" --enablerepo Nuage nuage-openstack-heat nuage-openstack-neutronclient && yum clean all
+
+RUN rm -f /etc/yum.repos.d/nuage.repo
+
+COPY licenses /licenses
+
+USER heat
