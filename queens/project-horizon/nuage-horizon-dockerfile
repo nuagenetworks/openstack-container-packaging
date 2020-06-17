@@ -1,10 +1,10 @@
 FROM registry.access.redhat.com/rhosp13/openstack-horizon:13.0-109
 MAINTAINER Nuage OpenStack Engineering opensource@nuagenetworks.net
 
-LABEL name="nuagenetworks/rhosp13-openstack-horizon-6-0-6"
+LABEL name="nuagenetworks/rhosp13-openstack-horizon-6-0-7"
 LABEL maintainer="opensource@nuagenetworks.net"
 LABEL vendor="Nuage"
-LABEL version="6.0.6"
+LABEL version="6.0.7"
 LABEL release="1"
 LABEL summary="Red Hat OpenStack Platform 13.0 horizon Nuage Horizon Plugin"
 LABEL description="Red Hat OpenStack Platform 13.0 horizon Nuage Horizon Plugin"
