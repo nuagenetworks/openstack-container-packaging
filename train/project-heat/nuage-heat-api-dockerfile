@@ -1,4 +1,4 @@
-FROM registry.redhat.io/rhosp-rhel8/openstack-heat-api:16.0
+FROM registry.redhat.io/rhosp-beta/openstack-heat-api:16.1
 MAINTAINER Nuage OpenStack Engineering opensource@nuagenetworks.net
 
 LABEL name="nuagenetworks/rhosp16-openstack-heat-api-20-5-latest"
