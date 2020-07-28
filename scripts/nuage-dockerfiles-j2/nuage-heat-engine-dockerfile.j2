@@ -1,4 +1,4 @@
-FROM registry.access.redhat.com/rhosp{{ nuage_config['OSRelease'] }}/openstack-heat-engine:latest
+FROM {{ nuage_config['RHRegistry'] }}/{{ nuage_config['OSNamespace'] }}/openstack-heat-engine:{{ nuage_config['OSRelease'] }}.{{ nuage_config['OSMinorRelease'] }}
 MAINTAINER Nuage OpenStack Engineering opensource@nuagenetworks.net
 
 LABEL name="nuagenetworks/rhosp{{ nuage_config['OSRelease'] }}-openstack-heat-engine-{{ nuage_config['NuageMajorRelease'] }}-{{ nuage_config['NuageMinorRelease'] }}-{{ nuage_config['NuageUpdateRelease'] }}"
@@ -6,8 +6,8 @@ LABEL maintainer="opensource@nuagenetworks.net"
 LABEL vendor="Nuage"
 LABEL version="{{ nuage_config['NuageMajorRelease'] }}.{{ nuage_config['NuageMinorRelease'] }}.{{ nuage_config['NuageUpdateRelease'] }}"
 LABEL release="{{ nuage_config['NuageRelease'] }}"
-LABEL summary="Red Hat OpenStack Platform {{ nuage_config['OSRelease'] }}.0 heat-engine Nuage Heat Plugin"
-LABEL description="Red Hat OpenStack Platform {{ nuage_config['OSRelease'] }}.0 heat-engine Nuage Heat Plugin"
+LABEL summary="Red Hat OpenStack Platform {{ nuage_config['OSRelease'] }}.{{ nuage_config['OSMinorRelease'] }} heat-engine Nuage Heat Plugin"
+LABEL description="Red Hat OpenStack Platform {{ nuage_config['OSRelease'] }}.{{ nuage_config['OSMinorRelease'] }} heat-engine Nuage Heat Plugin"
 
 USER root
 

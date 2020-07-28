@@ -1,5 +1,8 @@
 OSRelease: 13
+OSMinorRelease: 0
+OSNamespace: rhosp13
 OSName: queens
+RHRegistry: registry.access.redhat.com
 NuageMajorRelease: 5
 NuageMinorRelease: 3
 NuageUpdateRelease: 3
