@@ -28,7 +28,7 @@ def generate_dockerfiles(nuage_docker_config):
     scriptspath, dirpath = get_dirpath_and_scriptpath()
     env = Environment(loader=FileSystemLoader('%s/nuage-dockerfiles-j2/' 
                                               % scriptspath))
-    docker_images = nuage_docker_config['DockerImages'].split(',')
+    docker_images = nuage_docker_config['DockerImages']
     for image in docker_images:
         nuage_dockerfiles = dirpath + '/' + nuage_docker_config['OSName']\
                             + '/project-' + image.split('-')[0]
@@ -36,7 +36,7 @@ def generate_dockerfiles(nuage_docker_config):
             os.makedirs(nuage_dockerfiles)
         dockerfile_name = 'nuage-' + image + '-dockerfile'
         j2_dockerfile = dockerfile_name + '.j2'
-        print "Generating ", dockerfile_name
+        print("Generating ", dockerfile_name)
         dockerfile = env.get_template(j2_dockerfile)
         with open('%s/%s' % (nuage_dockerfiles, dockerfile_name), 'w') as \
                 dockerfile_file:
@@ -44,7 +44,7 @@ def generate_dockerfiles(nuage_docker_config):
                 nuage_config=nuage_docker_config))
 
     nuage_repo = env.get_template("nuage.repo.j2")
-    print "Generating nuage repo file"
+    print("Generating nuage repo file")
     with open('%s/%s/nuage.repo' % (dirpath, nuage_docker_config['OSName']),
               'w') as dockerfile_file:
         dockerfile_file.write(nuage_repo.render(
@@ -74,13 +74,10 @@ def main():
     """
     with open("nuage_docker_config.yaml") as ndc:
         nuage_docker_config = yaml.load(ndc)
-    nuage_docker_config['DockerImages'] = 'heat-api-cfn,heat-api,heat-eng' \
-                                          'ine,horizon,neutron-server,' \
-                                          'nova-compute'
     generate_dockerfiles(nuage_docker_config)
     copy_licenses(nuage_docker_config['OSName'])
     copy_gpgkey(nuage_docker_config['OSName'])
-    print "Done"
+    print("Done")
 
 
 if __name__ == "__main__":

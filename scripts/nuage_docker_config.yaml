@@ -2,6 +2,7 @@ OSRelease: 13
 OSMinorRelease: 0
 OSNamespace: rhosp13
 OSName: queens
+UseOvn: no
 RHRegistry: registry.access.redhat.com
 NuageMajorRelease: 5
 NuageMinorRelease: 3
@@ -9,3 +10,10 @@ NuageUpdateRelease: 3
 NuageRelease: 1
 RepoBaseUrl: https://s3-us-west-1.amazonaws.com/nuage-public-mirror/574d63bb0727c27e014d8f27ccc275c3f9641b955e8aa7659d74e4df9cf7847a/5.3.3/queens
 NuageUpgradeScripts: nuage-openstack-upgrade-5.3.3-222.tar.gz
+DockerImages:
+  - heat-api-cfn
+  - heat-api
+  - heat-engine
+  - horizon
+  - neutron-server
+  - nova-compute
