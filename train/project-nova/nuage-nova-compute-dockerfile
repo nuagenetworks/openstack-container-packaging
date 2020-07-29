@@ -1,4 +1,4 @@
-FROM registry.redhat.io/rhosp-rhel8/openstack-nova-compute:16.1
+FROM registry.redhat.io/rhosp-beta/openstack-nova-compute:16.1
 MAINTAINER Nuage OpenStack Engineering opensource@nuagenetworks.net
 
 LABEL name="nuagenetworks/rhosp16-openstack-nova-compute-20-5-latest"
@@ -6,8 +6,8 @@ LABEL maintainer="opensource@nuagenetworks.net"
 LABEL vendor="Nuage"
 LABEL version="20.5.latest"
 LABEL release="1"
-LABEL summary="Red Hat OpenStack Platform 16.1 nova-compute Nuage Nova Plugin"
-LABEL description="Red Hat OpenStack Platform 16.1 nova-compute Nuage Nova Plugin"
+LABEL summary="Red Hat OpenStack Platform 16.0 nova-compute Nuage Nova Plugin"
+LABEL description="Red Hat OpenStack Platform 16.0 nova-compute Nuage Nova Plugin"
 
 USER root
 
