@@ -21,8 +21,8 @@ COPY licenses /licenses
 
 RUN mkdir -p /opt/nuage_upgrade
 WORKDIR /opt/nuage_upgrade
-ADD https://s3-us-west-1.amazonaws.com/nuage-public-mirror/574d63bb0727c27e014d8f27ccc275c3f9641b955e8aa7659d74e4df9cf7847a/20.5.2/train/nuage-openstack-upgrade-20.5.1-11.tar.gz .
-RUN tar -xzf nuage-openstack-upgrade-20.5.1-11.tar.gz
+ADD https://s3-us-west-1.amazonaws.com/nuage-public-mirror/574d63bb0727c27e014d8f27ccc275c3f9641b955e8aa7659d74e4df9cf7847a/20.5.2/train/nuage-openstack-upgrade-20.5.2-26.tar.gz .
+RUN tar -xzf nuage-openstack-upgrade-20.5.2-26.tar.gz
 WORKDIR /
 
 USER neutron
