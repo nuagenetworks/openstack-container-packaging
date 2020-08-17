@@ -1,4 +1,4 @@
-FROM registry.redhat.io/rhosp-beta/openstack-horizon:16.1
+FROM registry.redhat.io/rhosp-rhel8/openstack-horizon:16.1
 MAINTAINER Nuage OpenStack Engineering opensource@nuagenetworks.net
 
 LABEL name="nuagenetworks/rhosp16-openstack-horizon-20-5-latest"
