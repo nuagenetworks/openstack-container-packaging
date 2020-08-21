@@ -1,10 +1,10 @@
 FROM registry.access.redhat.com/rhosp13/openstack-horizon:latest
 MAINTAINER Nuage OpenStack Engineering opensource@nuagenetworks.net
 
-LABEL name="nuagenetworks/rhosp13-openstack-horizon-5-4-1"
+LABEL name="nuagenetworks/rhosp13-openstack-horizon-5-4-1.latest"
 LABEL maintainer="opensource@nuagenetworks.net"
 LABEL vendor="Nuage"
-LABEL version="5.4.1"
+LABEL version="5.4.1.latest"
 LABEL release="1"
 LABEL summary="Red Hat OpenStack Platform 13.0 horizon Nuage Horizon Plugin"
 LABEL description="Red Hat OpenStack Platform 13.0 horizon Nuage Horizon Plugin"
