@@ -8,7 +8,7 @@ NuageMajorRelease: 6
 NuageMinorRelease: 0
 NuageUpdateRelease: 9
 NuageRelease: 1
-RepoBaseUrl: https://s3-us-west-1.amazonaws.com/nuage-public-mirror/574d63bb0727c27e014d8f27ccc275c3f9641b955e8aa7659d74e4df9cf7847a/6.0.9/nuage-openstack-upgrade-6.0.8-340.tar.gz
+RepoBaseUrl: https://s3-us-west-1.amazonaws.com/nuage-public-mirror/574d63bb0727c27e014d8f27ccc275c3f9641b955e8aa7659d74e4df9cf7847a/6.0.9/queens
 NuageUpgradeScripts: nuage-openstack-upgrade-6.0.8-340.tar.gz
 DockerImages:
   - heat-api-cfn
