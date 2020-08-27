@@ -4,12 +4,12 @@ OSNamespace: rhosp13
 OSName: queens
 UseOvn: no
 RHRegistry: registry.access.redhat.com
-NuageMajorRelease: 5
-NuageMinorRelease: 3
-NuageUpdateRelease: 3
+NuageMajorRelease: 6
+NuageMinorRelease: 0
+NuageUpdateRelease: 9
 NuageRelease: 1
-RepoBaseUrl: https://s3-us-west-1.amazonaws.com/nuage-public-mirror/574d63bb0727c27e014d8f27ccc275c3f9641b955e8aa7659d74e4df9cf7847a/5.3.3/queens
-NuageUpgradeScripts: nuage-openstack-upgrade-5.3.3-222.tar.gz
+RepoBaseUrl: https://s3-us-west-1.amazonaws.com/nuage-public-mirror/574d63bb0727c27e014d8f27ccc275c3f9641b955e8aa7659d74e4df9cf7847a/6.0.9/nuage-openstack-upgrade-6.0.8-340.tar.gz
+NuageUpgradeScripts: nuage-openstack-upgrade-6.0.8-340.tar.gz
 DockerImages:
   - heat-api-cfn
   - heat-api
