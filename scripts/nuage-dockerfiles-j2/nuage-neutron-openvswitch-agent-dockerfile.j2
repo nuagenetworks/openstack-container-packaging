@@ -1,0 +1,23 @@
+FROM {{ nuage_config['RHRegistry'] }}/{{ nuage_config['OSNamespace'] }}/openstack-neutron-openvswitch-agent:{{ nuage_config['OSRelease'] }}.{{ nuage_config['OSMinorRelease'] }}
+MAINTAINER Nuage OpenStack Engineering opensource@nuagenetworks.net
+
+LABEL name="nuagenetworks/rhosp{{ nuage_config['OSRelease'] }}-openstack-neutron-openvswitch-agent-{{ nuage_config['NuageMajorRelease'] }}-{{ nuage_config['NuageMinorRelease'] }}-{{ nuage_config['NuageUpdateRelease'] }}"
+LABEL maintainer="opensource@nuagenetworks.net"
+LABEL vendor="Nuage"
+LABEL version="{{ nuage_config['NuageMajorRelease'] }}.{{ nuage_config['NuageMinorRelease'] }}.{{ nuage_config['NuageUpdateRelease'] }}"
+LABEL release="{{ nuage_config['NuageRelease'] }}"
+LABEL summary="Red Hat OpenStack Platform {{ nuage_config['OSRelease'] }}.{{ nuage_config['OSMinorRelease'] }} neutron-openvswitch-agent Nuage Neutron Plugin"
+LABEL description="Red Hat OpenStack Platform {{ nuage_config['OSRelease'] }}.{{ nuage_config['OSMinorRelease'] }} neutron-openvswitch-agent Nuage Neutron Plugin"
+
+USER root
+
+COPY RPM-GPG-KEY-Nuage /tmp/RPM-GPG-KEY-Nuage
+COPY nuage.repo /etc/yum.repos.d/nuage.repo
+
+RUN yum install --disablerepo "*" --enablerepo Nuage fp-vdev-remote networking-6wind -y && yum clean all
+
+RUN rm -f /etc/yum.repos.d/nuage.repo
+
+COPY licenses /licenses
+
+USER neutron
