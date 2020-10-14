@@ -9,7 +9,7 @@ NuageMinorRelease: 0
 NuageUpdateRelease: 10
 NuageRelease: 1
 RepoBaseUrl: https://s3-us-west-1.amazonaws.com/nuage-public-mirror/574d63bb0727c27e014d8f27ccc275c3f9641b955e8aa7659d74e4df9cf7847a/6.0.10/queens
-NuageUpgradeScripts: nuage-openstack-upgrade-6.0.10-374.tar.gz
+NuageUpgradeScripts: nuage-openstack-upgrade-6.0.10-389.tar.gz
 DockerImages:
   - heat-api-cfn
   - heat-api
