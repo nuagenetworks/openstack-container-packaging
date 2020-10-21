@@ -1,0 +1,22 @@
+FROM registry.access.redhat.com/rhosp-rhel8/openstack-heat-api-cfn:16.1
+MAINTAINER Nuage OpenStack Engineering opensource@nuagenetworks.net
+
+LABEL name="nuagenetworks/rhosp16-openstack-heat-api-cfn-20-10-latest"
+LABEL maintainer="opensource@nuagenetworks.net"
+LABEL vendor="Nuage"
+LABEL version="20.10.latest"
+LABEL release="1"
+LABEL summary="Red Hat OpenStack Platform 16.1 heat-api-cfn Nuage Heat Plugin"
+LABEL description="Red Hat OpenStack Platform 16.1 heat-api-cfn Nuage Heat Plugin"
+
+USER root
+
+COPY RPM-GPG-KEY-Nuage /tmp/RPM-GPG-KEY-Nuage
+COPY nuage.repo /etc/yum.repos.d/nuage.repo
+RUN yum -y install --disablerepo "*" --enablerepo Nuage nuage-openstack-neutronclient && yum clean all
+
+RUN rm -f /etc/yum.repos.d/nuage.repo
+
+COPY licenses /licenses
+
+USER heat
