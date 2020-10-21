@@ -17,7 +17,7 @@ COPY nuage.repo /etc/yum.repos.d/nuage.repo
 {% if nuage_config['OSRelease'] == '13' %}
 RUN yum install --disablerepo "*" --enablerepo Nuage nuage-openstack-neutron nuage-openstack-neutronclient -y
 {% elif nuage_config['OSRelease'] == '16' %}
-RUN yum install --disablerepo "*" --nogpgcheck --enablerepo Nuage nuage-openstack-neutron nuage-openstack-neutronclient fp-vdev-remote networking-6wind -y
+RUN yum install --disablerepo "*" --enablerepo Nuage nuage-openstack-neutron nuage-openstack-neutronclient fp-vdev-remote networking-6wind -y
 {% endif %}
 
 RUN yum clean all
