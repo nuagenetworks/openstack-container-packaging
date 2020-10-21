@@ -1,4 +1,4 @@
-FROM registry.access.redhat.com/rhosp-rhel8/openstack-heat-api-cfn:16.1
+FROM registry.redhat.io/rhosp-rhel8/openstack-heat-api-cfn:16.1
 MAINTAINER Nuage OpenStack Engineering opensource@nuagenetworks.net
 
 LABEL name="nuagenetworks/rhosp16-openstack-heat-api-cfn-20-10-latest"
