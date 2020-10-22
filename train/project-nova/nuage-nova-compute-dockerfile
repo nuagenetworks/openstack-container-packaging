@@ -16,7 +16,7 @@ COPY nuage.repo /etc/yum.repos.d/nuage.repo
 
 
 
-RUN yum install --disablerepo "*" --nogpgcheck --enablerepo Nuage fp-vdev-remote os-vif-6wind-plugin -y
+RUN yum install --disablerepo "*" --enablerepo Nuage fp-vdev-remote os-vif-6wind-plugin -y
 
 
 
