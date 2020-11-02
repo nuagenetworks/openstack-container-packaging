@@ -15,9 +15,9 @@ COPY RPM-GPG-KEY-Nuage /tmp/RPM-GPG-KEY-Nuage
 COPY nuage.repo /etc/yum.repos.d/nuage.repo
 
 
-{% if nuage_config['OSRelease'] == '13' %}
+{% if nuage_config['OSRelease'] | string == '13' %}
 RUN yum install --disablerepo "*" --enablerepo Nuage 6wind-openstack-extensions -y
-{% elif nuage_config['OSRelease'] == '16' %}
+{% elif nuage_config['OSRelease'] | string == '16' %}
 RUN yum install --disablerepo "*" --enablerepo Nuage fp-vdev-remote os-vif-6wind-plugin -y
 {% endif %}
 
