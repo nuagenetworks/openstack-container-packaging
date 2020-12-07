@@ -1,10 +1,16 @@
 FROM {{ nuage_config['RHRegistry'] }}/{{ nuage_config['OSNamespace'] }}/openstack-nova-compute:{{ nuage_config['OSRelease'] }}.{{ nuage_config['OSMinorRelease'] }}
 MAINTAINER Nuage OpenStack Engineering opensource@nuagenetworks.net
 
+{% if 'NuagePatchRelease' in nuage_config %}
+LABEL name="nuagenetworks/rhosp{{ nuage_config['OSRelease'] }}-openstack-nova-compute-{{ nuage_config['NuageMajorRelease'] }}-{{ nuage_config['NuageMinorRelease'] }}-{{ nuage_config['NuageUpdateRelease'] }}-{{ nuage_config['NuagePatchRelease'] }}"
+LABEL version="{{ nuage_config['NuageMajorRelease'] }}.{{ nuage_config['NuageMinorRelease'] }}.{{ nuage_config['NuageUpdateRelease'] }}.{{ nuage_config['NuagePatchRelease'] }}"
+{% else %}
 LABEL name="nuagenetworks/rhosp{{ nuage_config['OSRelease'] }}-openstack-nova-compute-{{ nuage_config['NuageMajorRelease'] }}-{{ nuage_config['NuageMinorRelease'] }}-{{ nuage_config['NuageUpdateRelease'] }}"
+LABEL version="{{ nuage_config['NuageMajorRelease'] }}.{{ nuage_config['NuageMinorRelease'] }}.{{ nuage_config['NuageUpdateRelease'] }}"
+{% endif %}
+
 LABEL maintainer="opensource@nuagenetworks.net"
 LABEL vendor="Nuage"
-LABEL version="{{ nuage_config['NuageMajorRelease'] }}.{{ nuage_config['NuageMinorRelease'] }}.{{ nuage_config['NuageUpdateRelease'] }}"
 LABEL release="{{ nuage_config['NuageRelease'] }}"
 LABEL summary="Red Hat OpenStack Platform {{ nuage_config['OSRelease'] }}.{{ nuage_config['OSMinorRelease'] }} nova-compute Nuage Nova Plugin"
 LABEL description="Red Hat OpenStack Platform {{ nuage_config['OSRelease'] }}.{{ nuage_config['OSMinorRelease'] }} nova-compute Nuage Nova Plugin"
