@@ -21,6 +21,8 @@ COPY nuage.repo /etc/yum.repos.d/nuage.repo
 RUN yum install --disablerepo "*" --enablerepo Nuage nuage-openstack-neutron nuage-openstack-neutronclient fp-vdev-remote networking-6wind -y
 
 
+RUN yum -y update-minimal --security --sec-severity=Important --sec-severity=Critical
+
 RUN yum clean all
 RUN rm -f /etc/yum.repos.d/nuage.repo
 
