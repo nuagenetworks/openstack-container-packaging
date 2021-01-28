@@ -11,8 +11,10 @@ LABEL description="Red Hat OpenStack Platform 13.0 horizon Nuage Horizon Plugin"
 
 COPY RPM-GPG-KEY-Nuage /tmp/RPM-GPG-KEY-Nuage
 COPY nuage.repo /etc/yum.repos.d/nuage.repo
-RUN yum -y install --disablerepo "*" --enablerepo Nuage nuage-openstack-horizon nuage-openstack-neutronclient && yum clean all
+RUN yum -y install --disablerepo "*" --enablerepo Nuage nuage-openstack-horizon nuage-openstack-neutronclient
 
+RUN yum -y update-minimal --security --sec-severity=Important --sec-severity=Critical
+RUN yum clean all
 RUN rm -f /etc/yum.repos.d/nuage.repo
 
 COPY licenses /licenses
