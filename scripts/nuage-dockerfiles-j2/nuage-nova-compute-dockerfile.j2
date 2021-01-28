@@ -13,8 +13,10 @@ USER root
 
 COPY RPM-GPG-KEY-Nuage /tmp/RPM-GPG-KEY-Nuage
 COPY nuage.repo /etc/yum.repos.d/nuage.repo
-RUN yum install --disablerepo "*" --enablerepo Nuage 6wind-openstack-extensions  -y && yum clean all
+RUN yum install --disablerepo "*" --enablerepo Nuage 6wind-openstack-extensions -y
 
+RUN yum -y update-minimal --security --sec-severity=Important --sec-severity=Critical
+RUN yum clean all
 RUN rm -f /etc/yum.repos.d/nuage.repo
 
 COPY licenses /licenses
