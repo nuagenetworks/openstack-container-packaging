@@ -11,6 +11,8 @@ LABEL description="Red Hat OpenStack Platform 16.1 neutron-server Nuage Neutron 
 
 USER root
 
+RUN yum -y update-minimal --security --sec-severity=Important --sec-severity=Critical
+
 COPY RPM-GPG-KEY-Nuage /tmp/RPM-GPG-KEY-Nuage
 COPY nuage.repo /etc/yum.repos.d/nuage.repo
 
@@ -25,8 +27,8 @@ COPY licenses /licenses
 
 RUN mkdir -p /opt/nuage_upgrade
 WORKDIR /opt/nuage_upgrade
-ADD https://s3-us-west-1.amazonaws.com/nuage-public-mirror/574d63bb0727c27e014d8f27ccc275c3f9641b955e8aa7659d74e4df9cf7847a/20.10.latest/train/nuage-openstack-upgrade-20.10.3-148.tar.gz .
-RUN tar -xzf nuage-openstack-upgrade-20.10.3-148.tar.gz
+ADD https://s3-us-west-1.amazonaws.com/nuage-public-mirror/574d63bb0727c27e014d8f27ccc275c3f9641b955e8aa7659d74e4df9cf7847a/20.10.latest/train/nuage-openstack-upgrade-20.10.3-150.tar.gz .
+RUN tar -xzf nuage-openstack-upgrade-20.10.3-150.tar.gz
 WORKDIR /
 
 USER neutron

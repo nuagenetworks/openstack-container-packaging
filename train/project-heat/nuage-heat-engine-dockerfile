@@ -11,6 +11,8 @@ LABEL description="Red Hat OpenStack Platform 16.1 heat-engine Nuage Heat Plugin
 
 USER root
 
+RUN yum -y update-minimal --security --sec-severity=Important --sec-severity=Critical
+
 COPY RPM-GPG-KEY-Nuage /tmp/RPM-GPG-KEY-Nuage
 COPY nuage.repo /etc/yum.repos.d/nuage.repo
 RUN yum -y install --disablerepo "*" --enablerepo Nuage nuage-openstack-heat nuage-openstack-neutronclient && yum clean all
