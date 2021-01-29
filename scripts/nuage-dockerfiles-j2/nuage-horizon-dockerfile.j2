@@ -9,6 +9,8 @@ LABEL release="{{ nuage_config['NuageRelease'] }}"
 LABEL summary="Red Hat OpenStack Platform {{ nuage_config['OSRelease'] }}.0 horizon Nuage Horizon Plugin"
 LABEL description="Red Hat OpenStack Platform {{ nuage_config['OSRelease'] }}.0 horizon Nuage Horizon Plugin"
 
+RUN yum -y update-minimal --security --sec-severity=Important --sec-severity=Critical
+
 COPY RPM-GPG-KEY-Nuage /tmp/RPM-GPG-KEY-Nuage
 COPY nuage.repo /etc/yum.repos.d/nuage.repo
 RUN yum -y install --disablerepo "*" --enablerepo Nuage nuage-openstack-horizon nuage-openstack-neutronclient && yum clean all
