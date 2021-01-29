@@ -11,6 +11,8 @@ LABEL description="Red Hat OpenStack Platform {{ nuage_config['OSRelease'] }}.{{
 
 USER root
 
+RUN yum -y update-minimal --security --sec-severity=Important --sec-severity=Critical
+
 COPY RPM-GPG-KEY-Nuage /tmp/RPM-GPG-KEY-Nuage
 COPY nuage.repo /etc/yum.repos.d/nuage.repo
 
