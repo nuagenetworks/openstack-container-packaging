@@ -1,4 +1,4 @@
-FROM {{ nuage_config['RHRegistry'] }}/{{ nuage_config['OSNamespace'] }}/openstack-nova-compute:13.0-149
+FROM {{ nuage_config['RHRegistry'] }}/{{ nuage_config['OSNamespace'] }}/openstack-nova-compute:{{ nuage_config['OSRelease'] }}.{{ nuage_config['OSMinorRelease'] }}
 MAINTAINER Nuage OpenStack Engineering opensource@nuagenetworks.net
 
 {% if 'NuagePatchRelease' in nuage_config %}

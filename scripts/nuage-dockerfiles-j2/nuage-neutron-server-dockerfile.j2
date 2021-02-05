@@ -1,4 +1,4 @@
-FROM {{ nuage_config['RHRegistry'] }}/{{ nuage_config['OSNamespace'] }}/openstack-neutron-server{{ '-ovn' if UseOvn else '' }}:13.0-130
+FROM {{ nuage_config['RHRegistry'] }}/{{ nuage_config['OSNamespace'] }}/openstack-neutron-server{{ '-ovn' if UseOvn else '' }}:{{ nuage_config['OSRelease'] }}.{{ nuage_config['OSMinorRelease'] }}
 MAINTAINER Nuage OpenStack Engineering opensource@nuagenetworks.net
 
 {% if 'NuagePatchRelease' in nuage_config %}

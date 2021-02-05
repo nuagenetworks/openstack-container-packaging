@@ -1,4 +1,4 @@
-FROM {{ nuage_config['RHRegistry'] }}/{{ nuage_config['OSNamespace'] }}/openstack-heat-api-cfn:13.0-121
+FROM {{ nuage_config['RHRegistry'] }}/{{ nuage_config['OSNamespace'] }}/openstack-heat-api-cfn:{{ nuage_config['OSRelease'] }}.{{ nuage_config['OSMinorRelease'] }}
 MAINTAINER Nuage OpenStack Engineering opensource@nuagenetworks.net
 
 
