@@ -1,0 +1,37 @@
+FROM registry.redhat.io/rhosp-rhel8/openstack-neutron-server:16.1
+MAINTAINER Nuage OpenStack Engineering opensource@nuagenetworks.net
+
+
+LABEL name="nuagenetworks/rhosp16-openstack-neutron-server-20-10-3"
+LABEL version="20.10.3"
+
+
+LABEL maintainer="opensource@nuagenetworks.net"
+LABEL vendor="Nuage"
+LABEL release="1"
+LABEL summary="Red Hat OpenStack Platform 16.1 neutron-server Nuage Neutron Plugin"
+LABEL description="Red Hat OpenStack Platform 16.1 neutron-server Nuage Neutron Plugin"
+
+USER root
+
+RUN yum -y update-minimal --security --sec-severity=Important --sec-severity=Critical
+
+COPY RPM-GPG-KEY-Nuage /tmp/RPM-GPG-KEY-Nuage
+COPY nuage.repo /etc/yum.repos.d/nuage.repo
+
+
+RUN yum install --disablerepo "*" --enablerepo Nuage nuage-openstack-neutron nuage-openstack-neutronclient fp-vdev-remote networking-6wind -y
+
+
+RUN yum clean all
+RUN rm -f /etc/yum.repos.d/nuage.repo
+
+COPY licenses /licenses
+
+RUN mkdir -p /opt/nuage_upgrade
+WORKDIR /opt/nuage_upgrade
+ADD https://s3-us-west-1.amazonaws.com/nuage-public-mirror/574d63bb0727c27e014d8f27ccc275c3f9641b955e8aa7659d74e4df9cf7847a/20.10.3/train/nuage-openstack-upgrade-20.10.3-175.tar.gz .
+RUN tar -xzf nuage-openstack-upgrade-20.10.3-175.tar.gz
+WORKDIR /
+
+USER neutron
