@@ -1,4 +1,4 @@
-FROM registry.redhat.io/rhosp-rhel8/openstack-neutron-server:16.1
+FROM registry.redhat.io/rhosp-rhel8/openstack-neutron-server:16.1.5
 MAINTAINER Nuage OpenStack Engineering opensource@nuagenetworks.net
 
 
@@ -9,8 +9,8 @@ LABEL version="20.10.4"
 LABEL maintainer="opensource@nuagenetworks.net"
 LABEL vendor="Nuage"
 LABEL release="1"
-LABEL summary="Red Hat OpenStack Platform 16.1 neutron-server Nuage Neutron Plugin"
-LABEL description="Red Hat OpenStack Platform 16.1 neutron-server Nuage Neutron Plugin"
+LABEL summary="Red Hat OpenStack Platform 16.1.5 neutron-server Nuage Neutron Plugin"
+LABEL description="Red Hat OpenStack Platform 16.1.5 neutron-server Nuage Neutron Plugin"
 
 USER root
 

@@ -1,5 +1,5 @@
 OSRelease: 16
-OSMinorRelease: 1
+OSMinorRelease: 1.5
 OSNamespace: rhosp-rhel8
 OSName: train
 UseOvn: yes

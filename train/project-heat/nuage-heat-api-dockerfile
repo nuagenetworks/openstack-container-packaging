@@ -1,4 +1,4 @@
-FROM registry.redhat.io/rhosp-rhel8/openstack-heat-api:16.1
+FROM registry.redhat.io/rhosp-rhel8/openstack-heat-api:16.1.5
 MAINTAINER Nuage OpenStack Engineering opensource@nuagenetworks.net
 
 
@@ -9,8 +9,8 @@ LABEL version="20.10.4"
 LABEL maintainer="opensource@nuagenetworks.net"
 LABEL vendor="Nuage"
 LABEL release="1"
-LABEL summary="Red Hat OpenStack Platform 16.1 heat-api Nuage Heat Plugin"
-LABEL description="Red Hat OpenStack Platform 16.1 heat-api Nuage Heat Plugin"
+LABEL summary="Red Hat OpenStack Platform 16.1.5 heat-api Nuage Heat Plugin"
+LABEL description="Red Hat OpenStack Platform 16.1.5 heat-api Nuage Heat Plugin"
 
 USER root
 
