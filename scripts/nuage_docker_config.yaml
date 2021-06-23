@@ -9,7 +9,7 @@ NuageMinorRelease: 10
 NuageUpdateRelease: 5
 NuageRelease: 1
 RepoBaseUrl: https://s3-us-west-1.amazonaws.com/nuage-public-mirror/574d63bb0727c27e014d8f27ccc275c3f9641b955e8aa7659d74e4df9cf7847a/20.10.5/train
-NuageUpgradeScripts: nuage-openstack-upgrade-20.10.5-296.tar.gz
+NuageUpgradeScripts: nuage-openstack-upgrade-20.10.5-298.tar.gz
 DockerImages:
   - heat-api-cfn
   - heat-api
