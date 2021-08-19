@@ -2,6 +2,8 @@ OSRelease: 13
 OSMinorRelease: 0
 OSNamespace: rhosp13
 OSName: queens
+RhelRelease: 8.2
+RhelRepos: rhel-8-for-x86_64-baseos-eus-rpms,rhel-8-for-x86_64-appstream-eus-rpms
 UseOvn: no
 RHRegistry: registry.access.redhat.com
 NuageMajorRelease: 3

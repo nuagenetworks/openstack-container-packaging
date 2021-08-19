@@ -1,21 +1,16 @@
 import os
+import argparse
 import shutil
 import yaml
 from jinja2 import Environment, FileSystemLoader
 
 
-def get_dirpath_and_scriptpath():
-    """
-    Using this function user can get the current working directory
-    and the directory to which the generated nuage-dockerfiles,
-    licenses and gpgkey to be copied.
-    """
-    scriptspath = os.path.dirname(os.path.abspath(__file__))
-    dirpath = scriptspath.split('/scripts')[0]
-    return scriptspath, dirpath
+def get_wrkdir():
+    wrkdir = os.path.dirname(os.path.abspath(__file__))
+    return wrkdir
 
 
-def generate_dockerfiles(nuage_docker_config):
+def generate_dockerfiles(output_path, nuage_docker_config):
     """
     This function is responsible to generate nuage-dockerfiles and
     nuage.repo in their respective project directories.
@@ -25,13 +20,12 @@ def generate_dockerfiles(nuage_docker_config):
       neutron-server dockerfile will be created under project-neutron
       nova-compute dockerfile will be created under project-compute
     """
-    scriptspath, dirpath = get_dirpath_and_scriptpath()
-    env = Environment(loader=FileSystemLoader('%s/nuage-dockerfiles-j2/' 
-                                              % scriptspath))
+    wrkdir = get_wrkdir()
+    env = Environment(loader=FileSystemLoader('%s/nuage-dockerfiles-j2/'
+                                              % wrkdir))
     docker_images = nuage_docker_config['DockerImages']
     for image in docker_images:
-        nuage_dockerfiles = dirpath + '/' + nuage_docker_config['OSName']\
-                            + '/project-' + image.split('-')[0]
+        nuage_dockerfiles = output_path + '/project-' + image.split('-')[0]
         if not os.path.exists(nuage_dockerfiles):
             os.makedirs(nuage_dockerfiles)
         dockerfile_name = 'nuage-' + image + '-dockerfile'
@@ -45,41 +39,40 @@ def generate_dockerfiles(nuage_docker_config):
 
     nuage_repo = env.get_template("nuage.repo.j2")
     print("Generating nuage repo file")
-    with open('%s/%s/nuage.repo' % (dirpath, nuage_docker_config['OSName']),
+    with open('%s/nuage.repo' % output_path,
               'w') as dockerfile_file:
         dockerfile_file.write(nuage_repo.render(
             nuage_config=nuage_docker_config))
 
 
-def copy_licenses(version):
+def copy_licenses(output_path):
     # This function will copy licenses directory
-    scriptspath, dirpath = get_dirpath_and_scriptpath()
-    source = scriptspath + '/licenses/'
-    destination = dirpath + '/' + version + '/licenses'
+    wrkdir = get_wrkdir()
+    source = wrkdir + '/licenses/'
+    destination = output_path + '/licenses'
     shutil.copytree(source, destination)
 
 
-def copy_gpgkey(version):
+def copy_gpgkey(output_path):
     # This function will copy gpgkey
-    scriptspath, dirpath = get_dirpath_and_scriptpath()
-    source = scriptspath + '/RPM-GPG-KEY-Nuage'
-    destination = dirpath + '/' + version + '/RPM-GPG-KEY-Nuage'
+    wrkdir = get_wrkdir()
+    source = wrkdir + '/RPM-GPG-KEY-Nuage'
+    destination = output_path + '/RPM-GPG-KEY-Nuage'
     shutil.copyfile(source, destination)
 
 
 def main():
-    """
-    This is the main function reads all the required configs from
-    nuage_docker_config.yaml and calls the functions in an order.
-    """
-    with open("nuage_docker_config.yaml") as ndc:
+    parser = argparse.ArgumentParser()
+    parser.add_argument('config')
+    parser.add_argument('output')
+    argument = parser.parse_args()
+    with open(argument.config) as ndc:
         nuage_docker_config = yaml.load(ndc)
-    generate_dockerfiles(nuage_docker_config)
-    copy_licenses(nuage_docker_config['OSName'])
-    copy_gpgkey(nuage_docker_config['OSName'])
+        generate_dockerfiles(argument.output, nuage_docker_config)
+        copy_licenses(argument.output)
+        copy_gpgkey(argument.output)
     print("Done")
 
 
 if __name__ == "__main__":
     main()
-
