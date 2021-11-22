@@ -1,4 +1,4 @@
-FROM registry.access.redhat.com/rhosp13/openstack-nova-compute:13.0
+FROM registry.access.redhat.com/rhosp13/openstack-nova-compute:13.0-149
 MAINTAINER Nuage OpenStack Engineering opensource@nuagenetworks.net
 
 
