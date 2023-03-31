@@ -15,7 +15,7 @@ LABEL release="{{ nuage_config['NuageRelease'] }}"
 LABEL summary="Red Hat OpenStack Platform {{ nuage_config['OSRelease'] }}.{{ nuage_config['OSMinorRelease'] }} horizon Nuage Horizon Plugin"
 LABEL description="Red Hat OpenStack Platform {{ nuage_config['OSRelease'] }}.{{ nuage_config['OSMinorRelease'] }} horizon Nuage Horizon Plugin"
 
-RUN yum --releasever {{ nuage_config['RhelRelease'] }} -y --enablerepo "{{ nuage_config['RhelRepos'] }}"  update-minimal --security --sec-severity=Important --sec-severity=Critical
+RUN yum --releasever {{ nuage_config['RhelRelease'] }} -y --disablerepo "*"  --enablerepo "{{ nuage_config['RhelRepos'] }}"  update-minimal --security --sec-severity=Important --sec-severity=Critical
 
 COPY RPM-GPG-KEY-Nuage /tmp/RPM-GPG-KEY-Nuage
 COPY nuage.repo /etc/yum.repos.d/nuage.repo
